@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Website</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+      text-align: right;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 36px;
+    }
+
+    p {
+      color: #555;
+      font-size: 18px;
+    }
+
+    img {
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    section {
+      background-color: #ffffff;
+      margin-top: 40px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    section h2 {
+      color: #2c3e50;
+      font-size: 28px;
+    }
+
+    section p {
+      color: #444;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    #contact {
+      background-color: #eef6ff;
+    }
+
+    #contact a {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #contact a:hover {
+      text-decoration: underline;
+    }
+
+    #social-media {
+      background-color: #fff3e6;
+    }
+
+    #social-media a {
+      color: #e1306c;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 18px;
+    }
+
+    #social-media a:hover {
+      text-decoration: underline;
+    }
+
+    /* Make it responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        padding: 10px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      nav a {
+        margin: 10px 0;
+        font-size: 16px;
+      }
+
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation with Hamburger Menu -->
+  <nav>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <h1>Hello, I'm Hillary!</h1>
+  <p>This is my first website. I added my own picture!</p>
+  <img src="myphoto.jpg" alt="my photo">
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hi! I'm Hillary, and I'm learning how to build websites with HTML and CSS.
+      This is my first web project, and I'm having so much fun creating and styling my page!
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can reach me at: 
+      <a href="mailto:hillary@example.com">hillaryobasuyi8@gmail.com</a>
+    </p>
+  </section>
+
+  <!-- Social Media Section -->
+  <section id="social-media">
+    <h2>Follow Me</h2>
+    <p>
+      <a href="https://www.instagram.com/yourusername" target="_blank">ghost31820</a> |
+      <a href="https://wa.me/2348123456789" target="_blank">08052157724</a>
+    </p>
+  </section>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    function toggleMenu() {
+      const links = document.getElementById("navLinks");
+      links.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
