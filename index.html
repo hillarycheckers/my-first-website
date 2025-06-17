@@ -1,205 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>Hillarix Bank</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First Website</title>
   <style>
     body {
-      background-color: #f0f8ff;
-      font-family: Arial, sans-serif;
+      background-color: #f2f4f8;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0a3d62;
+      color: white;
+      padding: 20px;
       text-align: center;
-      padding: 40px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    nav {
-      background-color: #333;
-      padding: 10px 0;
-    }
-
-    .menu-icon {
-      display: none;
-      font-size: 28px;
-      color: white;
-      cursor: pointer;
-      padding: 10px;
-      text-align: right;
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    nav a:hover {
-      color: #00ffff;
-    }
-
-    h1 {
-      color: #2c3e50;
-      font-size: 36px;
-    }
-
-    p {
-      color: #555;
-      font-size: 18px;
-    }
-
-    img {
-      width: 300px;
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: white;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    section {
-      background-color: #ffffff;
-      margin-top: 40px;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     }
 
-    section h2 {
-      color: #2c3e50;
-      font-size: 28px;
+    h1, h2 {
+      margin: 0;
+      color: #fdfbfb;
     }
 
-    section p {
-      color: #444;
-      font-size: 18px;
-      line-height: 1.6;
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+      font-size: 16px;
     }
 
-    #contact {
-      background-color: #eef6ff;
-    }
-
-    #contact a {
-      color: #0066cc;
-      text-decoration: none;
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      background-color: #218c74;
+      color: white;
+      font-size: 16px;
       font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
-    #contact a:hover {
-      text-decoration: underline;
+    button:hover {
+      background-color: #1e7e67;
     }
 
-    #social-media {
-      background-color: #fff3e6;
+    .balance-box {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #f6f9fc;
+      border-left: 5px solid #218c74;
+      font-size: 20px;
     }
 
-    #social-media a {
-      color: #e1306c;
-      font-weight: bold;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 18px;
-    }
-
-    #social-media a:hover {
-      text-decoration: underline;
-    }
-
-    /* Make it responsive */
-    @media (max-width: 600px) {
-      body {
-        padding: 20px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      .menu-icon {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: #333;
-        padding: 10px 0;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      nav a {
-        margin: 10px 0;
-        font-size: 16px;
-      }
-
-      img {
-        width: 100%;
-        max-width: 100%;
-      }
-
-      section {
-        padding: 20px;
-      }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
     }
   </style>
 </head>
-<body>
+<body><img src="hillarix-logo.png" alt="Hillarix Bank Logo" style="width: 120px; margin-bottom: 20px;">
 
-  <!-- Navigation with Hamburger Menu -->
-  <nav>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <div class="nav-links" id="navLinks">
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+  <header>
+    <h1>Hillarix Bank</h1>
+    <p>Your Trusted Digital Savings Platform</p>
+  </header>
+
+  <div class="container">
+    <h2>Deposit Funds</h2>
+    <input type="number" id="depositInput" placeholder="Enter amount in ₦">
+    <button onclick="addDeposit()">Deposit</button>
+
+    <div class="balance-box">
+      Total Savings: ₦<span id="balance">0.00</span>
     </div>
-  </nav>
+  </div>
 
-  <!-- Main Content -->
-  <h1>Hello, I'm Hillary!</h1>
-  <p>This is my first website. I added my own picture!</p>
-  <img src="myphoto.JPG" alt="My photo">
+  <footer>
+    &copy; 2025 Hillarix Bank. All rights reserved.
+  </footer>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hi! I'm Hillary, and I'm learning how to build websites with HTML and CSS.
-      This is my first web project, and I'm having so much fun creating and styling my page!
-    </p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>You can reach me at: 
-      <a href="mailto:hillary@example.com">hillaryobasuyi8@gmail.com</a>
-    </p>
-  </section>
-
-  <!-- Social Media Section -->
-  <section id="social-media">
-    <h2>Follow Me</h2>
-    <p>
-      <a href="https://www.instagram.com/yourusername" target="_blank">ghost31820</a> |
-      <a href="https://wa.me/2348123456789" target="_blank">08052157724</a>
-    </p>
-  </section>
-
-  <!-- Mobile Menu Toggle Script -->
   <script>
-    function toggleMenu() {
-      const links = document.getElementById("navLinks");
-      links.classList.toggle("show");
+    let totalSavings = localStorage.getItem('savings') 
+                      ? parseFloat(localStorage.getItem('savings')) 
+                      : 0;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('balance').textContent = totalSavings.toFixed(2);
+    });
+
+    function addDeposit() {
+      const input = document.getElementById('depositInput');
+      const amount = parseFloat(input.value.trim());
+
+      if (!isNaN(amount) && amount > 0) {
+        totalSavings += amount;
+        document.getElementById('balance').textContent = totalSavings.toFixed(2);
+        localStorage.setItem('savings', totalSavings);
+        input.value = '';
+      } else {
+        alert('Please enter a valid amount (₦100 or more)');
+      }
     }
   </script>
 
